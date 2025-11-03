@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyderabad Ride Fare Comparison</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>RIDEWISE</h1>
+            <p>Compare prices between Uber, Rapido, and Ola</p>
+        </header>
+
+        <main>
+            <div class="form-container">
+                <form id="ride-form">
+                    <div class="form-group">
+                        <label for="pickup">Pickup Location</label>
+                        <select id="pickup" required>
+                            <option value="">Select pickup location</option>
+                            <option value="Hitech City">Hitech City</option>
+                            <option value="Banjara Hills">Banjara Hills</option>
+                            <option value="Gachibowli">Gachibowli</option>
+                            <option value="Secunderabad">Secunderabad</option>
+                            <option value="Jubilee Hills">Jubilee Hills</option>
+                            <option value="Madhapur">Madhapur</option>
+                            <option value="Kukatpally">Kukatpally</option>
+                            <option value="Musarambagh">Musarambagh</option>
+                            <option value="GRIET College">GRIET College</option>
+                            <option value="Saidabad">Saidabad</option>
+                            <option value="ECIL">ECIL</option>
+                            <option value="KPHB">KPHB</option>
+                            <option value="Rajiv Gandhi International Airport">Rajiv Gandhi International Airport</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="dropoff">Drop-off Location</label>
+                        <select id="dropoff" required>
+                            <option value="">Select drop-off location</option>
+                            <option value="Hitech City">Hitech City</option>
+                            <option value="Banjara Hills">Banjara Hills</option>
+                            <option value="Gachibowli">Gachibowli</option>
+                            <option value="Secunderabad">Secunderabad</option>
+                            <option value="Jubilee Hills">Jubilee Hills</option>
+                            <option value="Madhapur">Madhapur</option>
+                            <option value="Kukatpally">Kukatpally</option>
+                            <option value="Musarambagh">Musarambagh</option>
+                            <option value="GRIET College">GRIET College</option>
+                            <option value="Saidabad">Saidabad</option>
+                            <option value="ECIL">ECIL</option>
+                            <option value="KPHB">KPHB</option>
+                            <option value="Rajiv Gandhi International Airport">Rajiv Gandhi International Airport</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Vehicle Selection -->
+                    <div class="form-group" id="vehicle-container">
+                        <label>Select Vehicle Type</label>
+                        <div class="vehicle-box" id="auto-box">
+                          <img src="auto.png" alt="Auto" class="vehicle-icon" />
+                          <p>Auto</p>
+                        </div>
+                        <div class="vehicle-box" id="cab-box">
+                          <img src="cab.jpg" alt="Cab" class="vehicle-icon" />
+                          <p>Cab</p>
+                        </div>
+                        <div class="vehicle-box" id="bike-box">
+                          <img src="bike.png" alt="Bike" class="vehicle-icon" />
+                          <p>Bike</p>
+                        </div>
+                        <div class="vehicle-box" id="all-box" data-vehicle="all">
+                            <img src="all.jpg" alt="All Vehicles" class="vehicle-icon" style="transform: scale(1.2);" />
+                            <p>All</p>
+                          </div>
+                          
+                          
+                    </div>
+
+                    <button type="submit" class="btn">Compare Fares</button>
+                </form>
+            </div>
+
+            <div class="results-container" id="results" style="display: none;">
+                <h2>Fare Estimates</h2>
+                <div class="loader" id="loader" style="display: none;">Loading...</div>
+                <div class="results-grid" id="results-grid"></div>
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2025 Hyderabad Ride Comparison | Demo Project</p>
+            <p class="disclaimer">Note: All fares shown are sample data and not actual prices</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Check if the page was refreshed
+        if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

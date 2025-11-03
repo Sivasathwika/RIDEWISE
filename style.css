@@ -1,0 +1,302 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+    background-image: url('background3.png'); /* Change this path to match your image */
+    background-size: cover;              /* Ensures the image covers the full screen */
+    background-repeat: no-repeat;        /* Prevents repeating */
+    background-position: center center;  /* Centers the image */
+    background-attachment: fixed;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 30px 20px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+}
+
+header h1 {
+    color: #4a148c;
+    margin-bottom: 12px;
+    font-size: 2.75rem;
+}
+
+header p {
+    color: #555;
+    font-size: 1.15rem;
+}
+
+/* Form Styles */
+.form-container {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 32px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333;
+    background-color: #fafafa;
+    transition: border-color 0.3s ease;
+}
+
+select:focus {
+    border-color: #7e57c2;
+    outline: none;
+}
+
+.btn {
+    background-color: #7e57c2;
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background-color: #5e35b1;
+}
+
+/* Results Styles */
+.results-container {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+    display: none;
+}
+
+.results-container h2 {
+    color: #4a148c;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.ride-card {
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: #fafafa;
+}
+
+.ride-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+.uber .ride-card {
+    border-top: 5px solid #000; /* Uber's border color */
+}
+
+.rapido .ride-card {
+    border-top: 5px solid rgb(244, 208, 25); /* Rapido's border color */
+}
+
+.ola .ride-card {
+    border-top: 5px solid #4caf50; /* Ola's border color */
+}
+
+
+.ride-logo {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.uber .ride-logo {
+    color: #000;
+}
+
+.rapido .ride-logo {
+    color: rgb(244, 208, 25);
+}
+
+.ola .ride-logo {
+    color: #4caf50;
+}
+
+.ride-price {
+    font-size: 26px;
+    font-weight: 700;
+    color: #222;
+    margin: 10px 0;
+}
+
+.ride-details {
+    color: #777;
+    font-size: 14px;
+}
+
+.ride-details p {
+    margin: 6px 0;
+}
+
+.additional-charges {
+    color: #d32f2f;
+    font-weight: 500;
+    margin: 8px 0;
+    padding: 8px;
+    background-color: #ffebee;
+    border-radius: 4px;
+}
+
+/* Loader */
+.loader {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #7e57c2;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+    display: none;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px 0;
+    color: #888;
+}
+
+.disclaimer {
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-top: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .form-container,
+    .results-container {
+        padding: 20px;
+    }
+
+    .results-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Vehicle Selection */
+#vehicle-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.vehicle-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100px; /* Set a fixed width for consistency */
+    text-align: center;
+}
+
+.vehicle-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.vehicle-icon {
+    height: 30px; /* Decrease the image size */
+    width: 30px;  /* Decrease the image size */
+    margin-bottom: 8px;
+}
+
+.vehicle-box p {
+    font-size: 14px; /* Smaller font size */
+    font-weight: bold;
+}
+
+.vehicle-box.selected {
+    border-color: #7e57c2;
+}
+
+/* Book Button */
+.book-btn {
+    background-color: black;
+    color: white;
+    padding: 10px 18px;
+    font-size: 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.book-btn:hover {
+    background-color: #777;
+    transform: scale(1.05);
+    box-shadow: 12px 24px 25 rgba(0, 0, 0, 0.5);
+}
+.vehicle-box.selected {
+    border-color: #7e57c2;  /* Purple border color */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
